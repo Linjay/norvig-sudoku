@@ -1,8 +1,8 @@
 norvig-sudoku
 =======================================================
-these algorith provided by norvig<br />  
+these algorithm provided by norvig<br />  
 based on Constraint Propagation, assumption, Depth-first traversal<br />  
-[here is the page for more detail](http://norvig.com/sudoku.html)<br />  
+[Here is the page for more detail](http://norvig.com/sudoku.html)<br />  
 
 Norvig's Sudoku solver in C++ (English versions).
 ------------------------------
@@ -19,31 +19,35 @@ Norvig's Sudoku solver in C++ (English versions).
 Here is some Evaluation:
 -----------------
 ### Q1.
-		.......1.
-		4........
-		.2.......
-		....5.4.7
-		..8...3..
-		..1.9....
-		3..4..2..
-		.5.1.....
-		...8.6...
+		. . . | . . . | . 1 .
+		4 . . | . . . | . . .
+		. 2 . | . . . | . . .
+		------+-------+------
+		. . . | . 5 . | 4 . 7
+		. . 8 | . . . | 3 . .
+		. . 1 | . 9 . | . . .
+		------+-------+------
+		3 . . | 4 . . | 2 . .
+		. 5 . | 1 . . | . . .
+		. . . | 8 . 6 | . . .
 
 		.......1.4.........2...........5.4.7..8...3....1.9....3..4..2...5.1........8.6...
 		before optimized: more than 1 ms
 		after optimized : abount 468 us
 
 ### Q2:
-		..1..4...
-		....6.3.5
-		...9.....
-		8.....7.3
-		.......28
-		5...7.6..
-		3...8...6
-		..92.....
-		.4...1...
-
+		. . 1 | . . 4 | . . .
+		. . . | . 6 . | 3 . 5
+		. . . | 9 . . | . . .
+		------+-------+------
+		8 . . | . . . | 7 . 3
+		. . . | . . . | . 2 8
+		5 . . | . 7 . | 6 . .
+		------+-------+------
+		3 . . | . 8 . | . . 6
+		. . 9 | 2 . . | . . .
+		. 4 . | . . 1 | . . .
+		
 		..1..4.......6.3.5...9.....8.....7.3.......285...7.6..3...8...6..92......4...1...
 		before optimized: 21~24ms
 		after optimized : abount 4ms and 957us
@@ -90,7 +94,7 @@ Here is some Evaluation:
 		. . . |. . . |. . . 
 		.....5.8....6.1.43..........1.5........1.6...3.......553.....61........4.........
 		before optimized : No solution,time:274,213ms
-after optimized : 77s 173ms 457us
+		after optimized : 77s 173ms 457us
 
 As it shows: More encapsulation, faster development efficiency, a slower execution efficiency
 ---------------------
