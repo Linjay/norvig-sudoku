@@ -7,8 +7,8 @@ based on Constraint Propagation, assumption, Depth-first traversal<br />
 Norvig's Sudoku solver in C++ (English versions).
 ------------------------------
 		Compile with `--std=c++0x`. 
-		> >>g++ -o sudoku sudoku.en.cc --std=c++0x
-		> >>./sudoku
+		> g++ -o sudoku sudoku.en.cc --std=c++0x
+		> ./sudoku
 		> then input your sudoku with one line such as
 		> .......1.4.........2...........5.4.7..8...3....1.9....3..4..2...5.1........8.6...
 		> then the solution and elapsed time will be print below if exists, "No solution" will be show up if not;

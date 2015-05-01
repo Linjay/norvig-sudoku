@@ -135,10 +135,7 @@ void Sudoku::init() {
 bool Sudoku::assign(int k, int val) {
    for (int i = 1; i <= 9; i++) {
       if (i != val) {
-         if (!eliminate(k, i)) return false;
-         if (!eliminate(k, i)) {
-            return false;
-         }
+         if (!eliminate(k, i)) { return false; }
       }
    }
    return true;
