@@ -2,18 +2,56 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <sys/time.h>  
 using namespace std;
 
 class Possible {
-   vector<bool> _b;
+   int _b;
 public:
-   Possible() : _b(9, true) {}
-   bool   is_on(int i) const { return _b[i-1]; }
-   int    count()      const { return std::count(_b.begin(), _b.end(), true); }
-   void   eliminate(int i)   { _b[i-1] = false; }
+   // 511 in binary format : 111111111
+   Possible() : _b(511) {}
+   //return true if the bit index of i equals 1
+   bool   is_on(int i) const { return (_b&1<<(i-1))>>(i-1); }
+
+   //return the count of '1' of the binary
+   int    count()      const {
+      int n = _b;
+      n = (n&0x55555555) + ((n>>1)&0x55555555); 
+      n = (n&0x33333333) + ((n>>2)&0x33333333); 
+      n = (n&0x0f0f0f0f) + ((n>>4)&0x0f0f0f0f); 
+      n = (n&0x00ff00ff) + ((n>>8)&0x00ff00ff); 
+      n = (n&0x0000ffff) + ((n>>16)&0x0000ffff); 
+      return n; 
+   }
+   //set the bit index of i to 0, means false
+   void   eliminate(int i)   { _b=_b^1<<(i-1); }
+   //get the index of first bit equales 1
    int    val()        const {
-      auto it = find(_b.begin(), _b.end(), true);
-      return (it != _b.end() ? 1 + (it - _b.begin()) : -1);
+      int pos=1;
+      int data = _b;
+     if ((data & 0xFFFF) == 0)
+     {
+         data >>= 16;
+         pos += 16;
+     }
+     if ((data & 0xFF) == 0)
+     {
+         data >>= 8;
+         pos += 8;
+     }
+     if ((data & 0xF) == 0)
+     {
+         data >>= 4;
+         pos += 4;
+     }
+     if ((data & 0x3) == 0)
+     {
+         data >>= 2;
+         pos += 2;
+     }
+     if ((data & 0x1) == 0)
+         pos += 1;
+     return pos>=31?-1:pos;
    }
    string str(int wth) const;
 };
@@ -98,6 +136,9 @@ bool Sudoku::assign(int k, int val) {
    for (int i = 1; i <= 9; i++) {
       if (i != val) {
          if (!eliminate(k, i)) return false;
+         if (!eliminate(k, i)) {
+            return false;
+         }
       }
    }
    return true;
@@ -171,7 +212,7 @@ unique_ptr<Sudoku> solve(unique_ptr<Sudoku> S) {
    }
    int k = S->least_count();
    Possible p = S->possible(k);
-   for (int i = 1; i <= 9; i++) {
+   for (int i = 9; i >= 1; i--) {
       if (p.is_on(i)) {
          unique_ptr<Sudoku> S1(new Sudoku(*S));
          if (S1->assign(k, i)) {
@@ -184,15 +225,28 @@ unique_ptr<Sudoku> solve(unique_ptr<Sudoku> S) {
    return {};
 }
 
+_STRUCT_TIMEVAL getCurrentTime()  
+{  
+   struct timeval tv;  
+   gettimeofday(&tv,NULL);  
+   return tv;  
+}  
+
 int main() {
    Sudoku::init();
    string line;
+   _STRUCT_TIMEVAL stime,etime;
    while (getline(cin, line)) {
+      stime=getCurrentTime();
       if (auto S = solve(unique_ptr<Sudoku>(new Sudoku(line)))) {
+         etime=getCurrentTime();
          S->write(cout);
       } else {
          cout << "No solution";
+         etime=getCurrentTime();
       }
+      long usec = etime.tv_usec-stime.tv_usec;
+      cout<<"The elapsed time:" << etime.tv_sec-stime.tv_sec<<"s " << usec/1000<< "ms "<< usec%1000<< "us";
       cout << endl;
    }
 }
