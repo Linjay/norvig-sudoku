@@ -39,7 +39,9 @@ while lsof -nP -iTCP:"$PORT" -sTCP:LISTEN >/dev/null 2>&1; do
 done
 
 # 5. 启动服务并等待就绪
-info "启动服务（端口 $PORT）…"
+# 注意：macOS 自带 bash 3.2 解析变量名受 locale 影响，变量展开紧邻全角
+# 字符时必须写成 ${VAR}，否则全角字符会被并入变量名导致 unbound variable。
+info "启动服务（端口 ${PORT}）…"
 PORT="$PORT" node server.js &
 SERVER_PID=$!
 trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT INT TERM
@@ -55,8 +57,8 @@ curl -sf "http://127.0.0.1:$PORT/api/puzzles" >/dev/null 2>&1 \
   || fail "服务未在预期时间内就绪"
 
 # 6. 打开浏览器
-URL="http://localhost:$PORT"
-info "已就绪：$URL（按 Ctrl+C 停止服务）"
+URL="http://localhost:${PORT}"
+info "已就绪：${URL}（按 Ctrl+C 停止服务）"
 if command -v open >/dev/null 2>&1; then
   open "$URL"          # macOS
 elif command -v xdg-open >/dev/null 2>&1; then
