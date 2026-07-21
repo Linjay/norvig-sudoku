@@ -1,0 +1,15 @@
+{
+  "name": "norvig-sudoku-visualizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web visualizer for the Norvig sudoku solver's step-by-step solving path",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/replay.test.js tests/api.test.js",
+    "test:e2e": "playwright test",
+    "calibrate": "node tools/calibrate.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1"
+  }
+}

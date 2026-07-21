@@ -4,6 +4,36 @@ these algorithm provided by norvig<br />
 based on Constraint Propagation, assumption, Depth-first traversal<br />  
 [Here is the page for more detail](http://norvig.com/sudoku.html)<br />  
 
+Web 可视化解题器
+------------------------------
+基于本仓库求解模块的逐步解题过程可视化（设计文档见 `DESIGN.md`）：
+内置 10 道按难度分布的题目（简单×3 / 中等×3 / 困难×2 / 专家×2，
+难度按求解器实际猜测次数标定），选题求解后可逐步回放约束传播、
+唯一候选、唯一位置、猜测与回溯的完整路径，支持播放/单步/调速/
+关键步与全部步两档粒度，也可粘贴自定义 81 字符题串。
+
+	构建与运行（需 g++ 与 Node.js ≥ 18）：
+	> make trace          # 编译带 trace 模式的求解器 bin/sudoku_trace
+	> node server.js      # 启动后（默认 8000 端口）浏览器打开 http://localhost:8000
+
+	测试：
+	> make test           # C++ 单元/回归测试（含 trace 重放校验、top95/hardest 全量）
+	> npm test            # 回放引擎 + API 测试（node --test）
+	> npm run test:e2e    # Playwright E2E（需先 npm install）
+
+	目录说明：
+	- src/                维护版求解器：sudoku.{h,cc} 核心、trace.h 步骤记录、
+	                      main_cli.cc 命令行入口、main_trace.cc JSON trace 入口。
+	                      相比 sudoku.en.cc 修复了 macOS 专属计时、计时借位、
+	                      输入校验与 XOR 清位四个问题（Linux/macOS 均可编译）
+	- server.js           零依赖 Node 后端（/api/puzzles、/api/solve）
+	- web/                前端页面与回放引擎，puzzles.json 为固化题库
+	- tools/calibrate.js  题库难度标定脚本（重新生成 puzzles.json 用）
+	- sudoku.en.cc        原始版本，保留作历史参考（仅能在 macOS 编译）
+
+以下为原版说明：
+------------------------------
+
 Norvig's Sudoku solver in C++ (English versions).
 ------------------------------
 		Compile with `--std=c++0x`. 

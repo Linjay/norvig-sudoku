@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Norvig Sudoku Solver 可视化</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Norvig Sudoku Solver 可视化</h1>
+  <div class="custom">
+    <input id="custom-input" type="text" maxlength="100" spellcheck="false"
+           placeholder="粘贴 81 字符题串（. 或 0 为空格）">
+    <button id="btn-custom">载入自定义题</button>
+  </div>
+</header>
+
+<div id="message" class="hidden"></div>
+
+<main>
+  <aside>
+    <section id="puzzle-list" aria-label="题目列表"></section>
+    <section id="stats" class="hidden">
+      <h2>求解统计</h2>
+      <dl>
+        <dt>猜测</dt><dd id="stat-guesses">-</dd>
+        <dt>回溯</dt><dd id="stat-backtracks">-</dd>
+        <dt>候选删除</dt><dd id="stat-eliminations">-</dd>
+        <dt>总步数</dt><dd id="stat-steps">-</dd>
+        <dt>求解耗时</dt><dd id="stat-time">-</dd>
+      </dl>
+    </section>
+    <section class="legend">
+      <h2>图例</h2>
+      <ul>
+        <li><span class="chip st-given">5</span>提示数</li>
+        <li><span class="chip st-naked">5</span>唯一候选</li>
+        <li><span class="chip st-hidden">5</span>唯一位置</li>
+        <li><span class="chip st-guess">5</span>猜测</li>
+      </ul>
+    </section>
+  </aside>
+
+  <section class="stage">
+    <div id="board" aria-label="数独棋盘"></div>
+    <div id="placeholder">← 在左侧选择一道题，或在上方粘贴自定义题串</div>
+
+    <div id="controls" class="hidden">
+      <button id="btn-solve">求解</button>
+      <span id="playback" class="hidden">
+        <button id="btn-start" title="回到开头">⏮</button>
+        <button id="btn-step-b" title="上一步">◀</button>
+        <button id="btn-play" title="播放/暂停">▶ 播放</button>
+        <button id="btn-step-f" title="下一步">▶|</button>
+        <button id="btn-end" title="跳到结尾">⏭</button>
+        <label>速度
+          <select id="speed">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+            <option value="4">4×</option>
+          </select>
+        </label>
+        <label>粒度
+          <select id="granularity">
+            <option value="full" selected>全部步</option>
+            <option value="key">关键步</option>
+          </select>
+        </label>
+      </span>
+    </div>
+    <div id="progress-row" class="hidden">
+      <input id="progress" type="range" min="0" max="0" value="0">
+      <span id="progress-text">0 / 0</span>
+    </div>
+    <div id="log" class="hidden" aria-label="步骤日志"></div>
+  </section>
+</main>
+
+<script src="replay.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

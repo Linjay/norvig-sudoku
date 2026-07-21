@@ -1,0 +1,122 @@
+[
+  {
+    "id": "easy-1",
+    "difficulty": "easy",
+    "label": "简单 1",
+    "puzzle": ".1.8.7.2998....3.1..5...4.8.7...864....74...586.3....7.4..1.8.23...82.14.285.4...",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 145
+    }
+  },
+  {
+    "id": "easy-2",
+    "difficulty": "easy",
+    "label": "简单 2",
+    "puzzle": "..84........2.8....5496..7.5...12.391.2..74.63..5......7..9.214.2175.9.3....2.765",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 135
+    }
+  },
+  {
+    "id": "easy-3",
+    "difficulty": "easy",
+    "label": "简单 3",
+    "puzzle": ".4.39..6..6..1....1258.6.....2..7....8.2.54.9.......7.8.3.6.2.7..6.2358..9175863.",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 137
+    }
+  },
+  {
+    "id": "medium-1",
+    "difficulty": "medium",
+    "label": "中等 1",
+    "puzzle": "......52..8.4......3...9...5.1...6..2..7........3.....6...1..........7.4.......3.",
+    "givens": 17,
+    "stats": {
+      "guesses": 5,
+      "backtracks": 0,
+      "keySteps": 130
+    }
+  },
+  {
+    "id": "medium-2",
+    "difficulty": "medium",
+    "label": "中等 2",
+    "puzzle": "....3..9....2....1.5.9..............1.2.8.4.6.8.5...2..75......4.1..6..3.....4.6.",
+    "givens": 22,
+    "stats": {
+      "guesses": 2,
+      "backtracks": 0,
+      "keySteps": 147
+    }
+  },
+  {
+    "id": "medium-3",
+    "difficulty": "medium",
+    "label": "中等 3",
+    "puzzle": "..8.9.1...6.5...2......6....3.1.7.5.........9..4...3...5....2...7...3.8.2..7....4",
+    "givens": 22,
+    "stats": {
+      "guesses": 2,
+      "backtracks": 0,
+      "keySteps": 135
+    }
+  },
+  {
+    "id": "hard-1",
+    "difficulty": "hard",
+    "label": "困难 1",
+    "puzzle": "...658.....4......12............96.7...3..5....2.8...3..19..8..3.6.....4....473..",
+    "givens": 23,
+    "stats": {
+      "guesses": 16,
+      "backtracks": 10,
+      "keySteps": 361
+    }
+  },
+  {
+    "id": "hard-2",
+    "difficulty": "hard",
+    "label": "困难 2",
+    "puzzle": "...8....9.873...4.6..7.......85..97...........43..75.......3....3...145.4....2..1",
+    "givens": 24,
+    "stats": {
+      "guesses": 30,
+      "backtracks": 23,
+      "keySteps": 558
+    }
+  },
+  {
+    "id": "expert-1",
+    "difficulty": "expert",
+    "label": "专家 1",
+    "puzzle": ".........9......84.623...5....6...453...1...6...9...7....1.....4.5..2....3.8....9",
+    "givens": 22,
+    "stats": {
+      "guesses": 67,
+      "backtracks": 58,
+      "keySteps": 1247
+    }
+  },
+  {
+    "id": "expert-2",
+    "difficulty": "expert",
+    "label": "专家 2",
+    "puzzle": "1.....7.9.4...72..8.........7..1..6.3.......5.6..4..2.........8..53...7.7.2....46",
+    "givens": 23,
+    "stats": {
+      "guesses": 285,
+      "backtracks": 280,
+      "keySteps": 3254
+    }
+  }
+]
