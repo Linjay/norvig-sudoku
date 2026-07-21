@@ -12,7 +12,10 @@ Web 可视化解题器
 唯一候选、唯一位置、猜测与回溯的完整路径，支持播放/单步/调速/
 关键步与全部步两档粒度，也可粘贴自定义 81 字符题串。
 
-	构建与运行（需 g++ 与 Node.js ≥ 18）：
+	macOS 一键启动（自动检查环境、编译、启动并打开浏览器）：
+	> ./start-mac.command # 或在 Finder 中双击该文件；Ctrl+C 停止
+
+	手动构建与运行（macOS/Linux，需 g++ 与 Node.js ≥ 18）：
 	> make trace          # 编译带 trace 模式的求解器 bin/sudoku_trace
 	> node server.js      # 启动后（默认 8000 端口）浏览器打开 http://localhost:8000
 
