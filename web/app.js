@@ -3,6 +3,9 @@
 'use strict';
 (() => {
   const { ReplayEngine, STYLE, GROUPS, describeStep } = window.SudokuReplay;
+  // Static bundle mode (tools/build_static.js): the puzzle library and all
+  // traces are inlined and there is no backend, so custom input is hidden.
+  const BUNDLE = window.STATIC_BUNDLE || null;
 
   const $ = (id) => document.getElementById(id);
   const els = {
@@ -298,6 +301,17 @@
 
   async function doSolve() {
     if (!selected) return;
+    if (BUNDLE) {
+      const body = BUNDLE.traces[selected.id];
+      if (!body) {
+        showMessage('该题没有预生成的解题路径。', true);
+        return;
+      }
+      hideMessage();
+      loadTrace(body);
+      els.solve.textContent = '重新求解';
+      return;
+    }
     els.solve.disabled = true;
     els.solve.textContent = '求解中…';
     try {
@@ -330,8 +344,9 @@
   // --------------------------------------------------------- puzzle list
 
   async function loadLibrary() {
-    const res = await fetch('/api/puzzles');
-    const lib = await res.json();
+    const lib = BUNDLE
+      ? BUNDLE.puzzles
+      : await (await fetch('/api/puzzles')).json();
     const order = ['easy', 'medium', 'hard', 'expert'];
     let html = '';
     for (const d of order) {
@@ -361,6 +376,8 @@
     }
     select({ id: 'custom', label: '自定义', puzzle: raw });
   });
+
+  if (BUNDLE) document.querySelector('.custom').classList.add('hidden');
 
   loadLibrary().catch((e) => showMessage(`题库加载失败：${e.message}`, true));
 })();
