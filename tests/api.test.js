@@ -25,18 +25,39 @@ async function solve(body) {
   return { status: res.status, body: await res.json() };
 }
 
-test('GET /api/puzzles returns the 10-puzzle library with 3/3/2/2 spread', async () => {
+test('GET /api/puzzles returns the full library, bucketed and sorted easy→hard', async () => {
   const res = await fetch(`${base}/api/puzzles`);
   assert.equal(res.status, 200);
   const lib = await res.json();
-  assert.equal(lib.length, 10);
+  assert.ok(lib.length >= 100, `library too small: ${lib.length}`);
+
+  const ORDER = ['easy', 'medium', 'hard', 'expert'];
+  const inBucket = {
+    easy: (g) => g === 0,
+    medium: (g) => g >= 1 && g <= 5,
+    hard: (g) => g >= 6 && g <= 30,
+    expert: (g) => g > 30,
+  };
   const byDiff = {};
+  let lastRank = 0;
+  let lastGuesses = -1;
   for (const p of lib) {
     byDiff[p.difficulty] = (byDiff[p.difficulty] || 0) + 1;
     assert.match(p.puzzle, /^[1-9.]{81}$/, `${p.id}: bad puzzle string`);
     assert.ok(p.id && p.label && p.givens > 0 && p.stats, `${p.id}: missing fields`);
+    assert.ok(inBucket[p.difficulty](p.stats.guesses),
+      `${p.id}: ${p.stats.guesses} guesses outside its ${p.difficulty} bucket`);
+    // sorted: difficulties in order, guesses ascending within each
+    const rank = ORDER.indexOf(p.difficulty);
+    assert.ok(rank >= lastRank, `${p.id}: difficulty out of order`);
+    if (rank > lastRank) lastGuesses = -1;
+    assert.ok(p.stats.guesses >= lastGuesses, `${p.id}: guesses out of order`);
+    lastRank = rank;
+    lastGuesses = p.stats.guesses;
   }
-  assert.deepEqual(byDiff, { easy: 3, medium: 3, hard: 2, expert: 2 });
+  for (const d of ORDER) {
+    assert.ok(byDiff[d] >= 2, `too few ${d} puzzles: ${byDiff[d] || 0}`);
+  }
 });
 
 test('POST /api/solve solves every library puzzle within 500ms', async () => {

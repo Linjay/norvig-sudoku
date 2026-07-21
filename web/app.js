@@ -307,7 +307,9 @@
   async function doSolve() {
     if (!selected) return;
     if (BUNDLE) {
-      const body = BUNDLE.traces[selected.id];
+      const body = BUNDLE.decode
+        ? BUNDLE.decode(selected.id)
+        : BUNDLE.traces[selected.id];
       if (!body) {
         showMessage('该题没有预生成的解题路径。', true);
         return;
@@ -348,22 +350,45 @@
 
   // --------------------------------------------------------- puzzle list
 
-  async function loadLibrary() {
-    const lib = BUNDLE
-      ? BUNDLE.puzzles
-      : await (await fetch('/api/puzzles')).json();
+  let activeFilter = 'all';
+
+  function renderList(lib) {
     const order = ['easy', 'medium', 'hard', 'expert'];
-    let html = '';
+    const count = (d) => lib.filter((x) => x.difficulty === d).length;
+    let html = '<div class="filters">' +
+      `<button class="filter-chip${activeFilter === 'all' ? ' active' : ''}" ` +
+      `data-diff="all">全部 ${lib.length}</button>`;
     for (const d of order) {
+      html += `<button class="filter-chip${activeFilter === d ? ' active' : ''}" ` +
+        `data-diff="${d}">${DIFF_NAMES[d]} ${count(d)}</button>`;
+    }
+    html += '</div><div class="list-scroll">';
+    for (const d of order) {
+      if (activeFilter !== 'all' && activeFilter !== d) continue;
       html += `<div class="diff-title">${DIFF_NAMES[d]}</div>`;
       for (const p of lib.filter((x) => x.difficulty === d)) {
-        html += `<button class="puzzle-item" data-id="${p.id}">` +
+        const sel = selected && selected.id === p.id ? ' selected' : '';
+        html += `<button class="puzzle-item${sel}" data-id="${p.id}">` +
           `<span class="badge ${d}">${DIFF_NAMES[d]}</span>${p.label}` +
           `<span class="puzzle-meta">${p.givens} 提示 · ${p.stats.guesses} 猜测</span></button>`;
       }
     }
+    html += '</div>';
     els.list.innerHTML = html;
+  }
+
+  async function loadLibrary() {
+    const lib = BUNDLE
+      ? BUNDLE.puzzles
+      : await (await fetch('/api/puzzles')).json();
+    renderList(lib);
     els.list.addEventListener('click', (e) => {
+      const chip = e.target.closest('.filter-chip');
+      if (chip) {
+        activeFilter = chip.dataset.diff;
+        renderList(lib);
+        return;
+      }
       const btn = e.target.closest('.puzzle-item');
       if (!btn) return;
       const item = lib.find((p) => p.id === btn.dataset.id);

@@ -13,13 +13,28 @@ function boardString(page) {
       .map((c) => c.dataset.value || '.').join(''));
 }
 
-test('1. lists 10 puzzles grouped by difficulty 3/3/2/2', async ({ page }) => {
+test('1. lists the full library grouped by difficulty, with quick filters', async ({ page, request }) => {
+  const lib = await library(request);
+  const count = (d) => lib.filter((p) => p.difficulty === d).length;
   await page.goto('/');
-  await expect(page.locator('.puzzle-item')).toHaveCount(10);
-  for (const [diff, n] of [['easy', 3], ['medium', 3], ['hard', 2], ['expert', 2]]) {
-    await expect(page.locator(`.puzzle-item .badge.${diff}`)).toHaveCount(n);
+  await expect(page.locator('.puzzle-item')).toHaveCount(lib.length);
+  for (const d of ['easy', 'medium', 'hard', 'expert']) {
+    await expect(page.locator(`.puzzle-item .badge.${d}`)).toHaveCount(count(d));
   }
   await expect(page.locator('.diff-title')).toHaveCount(4);
+
+  // quick filter: only the chosen difficulty stays visible
+  await page.click('.filter-chip[data-diff="hard"]');
+  await expect(page.locator('.puzzle-item')).toHaveCount(count('hard'));
+  await expect(page.locator('.puzzle-item .badge.easy')).toHaveCount(0);
+  await expect(page.locator('.diff-title')).toHaveCount(1);
+  await page.click('.filter-chip[data-diff="all"]');
+  await expect(page.locator('.puzzle-item')).toHaveCount(lib.length);
+
+  // filtering must not lose the current selection
+  await page.click('.puzzle-item[data-id="easy-1"]');
+  await page.click('.filter-chip[data-diff="easy"]');
+  await expect(page.locator('.puzzle-item[data-id="easy-1"]')).toHaveClass(/selected/);
 });
 
 test('2. selecting a medium puzzle renders its givens', async ({ page, request }) => {

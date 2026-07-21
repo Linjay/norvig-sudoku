@@ -188,6 +188,27 @@ aside section {
   margin-bottom: 16px;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.filter-chip {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.filter-chip.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.list-scroll { max-height: 56vh; overflow-y: auto; }
+
 .diff-title { font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
 .diff-title:first-child { margin-top: 0; }
 .puzzle-item {

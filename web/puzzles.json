@@ -3,18 +3,42 @@
     "id": "easy-1",
     "difficulty": "easy",
     "label": "简单 1",
-    "puzzle": ".1.8.7.2998....3.1..5...4.8.7...864....74...586.3....7.4..1.8.23...82.14.285.4...",
+    "puzzle": "94.6...5....75..9..25..967873.895.2.58......46.24........23.51925.9.7..3..1......",
     "givens": 36,
     "stats": {
       "guesses": 0,
       "backtracks": 0,
-      "keySteps": 145
+      "keySteps": 129
     }
   },
   {
     "id": "easy-2",
     "difficulty": "easy",
     "label": "简单 2",
+    "puzzle": "7..1523........92....3.....1....47.8.......6............9...5.6.4.9.7...8....6.1.",
+    "givens": 22,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 132
+    }
+  },
+  {
+    "id": "easy-3",
+    "difficulty": "easy",
+    "label": "简单 3",
+    "puzzle": "2......73...9..26.8.7.....5423.86519..625...7..534.82.69...8...354...9...7.....52",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 133
+    }
+  },
+  {
+    "id": "easy-4",
+    "difficulty": "easy",
+    "label": "简单 4",
     "puzzle": "..84........2.8....5496..7.5...12.391.2..74.63..5......7..9.214.2175.9.3....2.765",
     "givens": 36,
     "stats": {
@@ -24,9 +48,9 @@
     }
   },
   {
-    "id": "easy-3",
+    "id": "easy-5",
     "difficulty": "easy",
-    "label": "简单 3",
+    "label": "简单 5",
     "puzzle": ".4.39..6..6..1....1258.6.....2..7....8.2.54.9.......7.8.3.6.2.7..6.2358..9175863.",
     "givens": 36,
     "stats": {
@@ -36,33 +60,45 @@
     }
   },
   {
+    "id": "easy-6",
+    "difficulty": "easy",
+    "label": "简单 6",
+    "puzzle": "65.....79......4....7.....67..63...11...2.38.3..5416.72..157...471.8..655..2.47.8",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 142
+    }
+  },
+  {
+    "id": "easy-7",
+    "difficulty": "easy",
+    "label": "简单 7",
+    "puzzle": ".1.8.7.2998....3.1..5...4.8.7...864....74...586.3....7.4..1.8.23...82.14.285.4...",
+    "givens": 36,
+    "stats": {
+      "guesses": 0,
+      "backtracks": 0,
+      "keySteps": 145
+    }
+  },
+  {
     "id": "medium-1",
     "difficulty": "medium",
     "label": "中等 1",
-    "puzzle": "......52..8.4......3...9...5.1...6..2..7........3.....6...1..........7.4.......3.",
-    "givens": 17,
+    "puzzle": "85...24..72......9..4.........1.7..23.5...9...4...........8..7..17..........36.4.",
+    "givens": 22,
     "stats": {
-      "guesses": 5,
+      "guesses": 1,
       "backtracks": 0,
-      "keySteps": 130
+      "keySteps": 134
     }
   },
   {
     "id": "medium-2",
     "difficulty": "medium",
     "label": "中等 2",
-    "puzzle": "....3..9....2....1.5.9..............1.2.8.4.6.8.5...2..75......4.1..6..3.....4.6.",
-    "givens": 22,
-    "stats": {
-      "guesses": 2,
-      "backtracks": 0,
-      "keySteps": 147
-    }
-  },
-  {
-    "id": "medium-3",
-    "difficulty": "medium",
-    "label": "中等 3",
     "puzzle": "..8.9.1...6.5...2......6....3.1.7.5.........9..4...3...5....2...7...3.8.2..7....4",
     "givens": 22,
     "stats": {
@@ -72,9 +108,333 @@
     }
   },
   {
+    "id": "medium-3",
+    "difficulty": "medium",
+    "label": "中等 3",
+    "puzzle": "....3..9....2....1.5.9..............1.2.8.4.6.8.5...2..75......4.1..6..3.....4.6.",
+    "givens": 22,
+    "stats": {
+      "guesses": 2,
+      "backtracks": 0,
+      "keySteps": 147
+    }
+  },
+  {
+    "id": "medium-4",
+    "difficulty": "medium",
+    "label": "中等 4",
+    "puzzle": "249.6...3.3....2..8.......5.....6......2......1..4.82..9.5..7....4.....1.7...3...",
+    "givens": 22,
+    "stats": {
+      "guesses": 3,
+      "backtracks": 0,
+      "keySteps": 137
+    }
+  },
+  {
+    "id": "medium-5",
+    "difficulty": "medium",
+    "label": "中等 5",
+    "puzzle": ".....2.......7...17..3...9.8..7......2.89.6...13..6....9..5.824.....891..........",
+    "givens": 23,
+    "stats": {
+      "guesses": 3,
+      "backtracks": 0,
+      "keySteps": 138
+    }
+  },
+  {
+    "id": "medium-6",
+    "difficulty": "medium",
+    "label": "中等 6",
+    "puzzle": ".6.5.4.3.1...9...8.........9...5...6.4.6.2.7.7...4...5.........4...8...1.5.2.3.4.",
+    "givens": 24,
+    "stats": {
+      "guesses": 3,
+      "backtracks": 1,
+      "keySteps": 171
+    }
+  },
+  {
+    "id": "medium-7",
+    "difficulty": "medium",
+    "label": "中等 7",
+    "puzzle": ".476...5.8.3.....2.....9......8.5..6...1.....6.24......78...51...6....4..9...4..7",
+    "givens": 24,
+    "stats": {
+      "guesses": 4,
+      "backtracks": 0,
+      "keySteps": 134
+    }
+  },
+  {
+    "id": "medium-8",
+    "difficulty": "medium",
+    "label": "中等 8",
+    "puzzle": "...92......68.3...19..7...623..4.1....1...7....8.3..297...8..91...5.72......64...",
+    "givens": 28,
+    "stats": {
+      "guesses": 4,
+      "backtracks": 1,
+      "keySteps": 164
+    }
+  },
+  {
+    "id": "medium-9",
+    "difficulty": "medium",
+    "label": "中等 9",
+    "puzzle": "963......1....8......2.5....4.8......1....7......3..257......3...9.2.4.7......9..",
+    "givens": 21,
+    "stats": {
+      "guesses": 5,
+      "backtracks": 0,
+      "keySteps": 129
+    }
+  },
+  {
+    "id": "medium-10",
+    "difficulty": "medium",
+    "label": "中等 10",
+    "puzzle": "......52..8.4......3...9...5.1...6..2..7........3.....6...1..........7.4.......3.",
+    "givens": 17,
+    "stats": {
+      "guesses": 5,
+      "backtracks": 0,
+      "keySteps": 130
+    }
+  },
+  {
+    "id": "medium-11",
+    "difficulty": "medium",
+    "label": "中等 11",
+    "puzzle": "8..7....4.5....6............3.97...8....43..5....2.9....6......2...6...7.71..83.2",
+    "givens": 23,
+    "stats": {
+      "guesses": 5,
+      "backtracks": 0,
+      "keySteps": 138
+    }
+  },
+  {
+    "id": "medium-12",
+    "difficulty": "medium",
+    "label": "中等 12",
+    "puzzle": "6..3.2....1.....5..........7.26............843.........8.15........8.2........7..",
+    "givens": 17,
+    "stats": {
+      "guesses": 5,
+      "backtracks": 1,
+      "keySteps": 196
+    }
+  },
+  {
     "id": "hard-1",
     "difficulty": "hard",
     "label": "困难 1",
+    "puzzle": "7.....4...2..7..8...3..8.799..5..3...6..2..9...1.97..6...3..9...3..4..6...9..1.35",
+    "givens": 28,
+    "stats": {
+      "guesses": 6,
+      "backtracks": 3,
+      "keySteps": 194
+    }
+  },
+  {
+    "id": "hard-2",
+    "difficulty": "hard",
+    "label": "困难 2",
+    "puzzle": "15.3......7..4.2....4.72.....8.........9..1.8.1..8.79......38...........6....7423",
+    "givens": 24,
+    "stats": {
+      "guesses": 6,
+      "backtracks": 3,
+      "keySteps": 231
+    }
+  },
+  {
+    "id": "hard-3",
+    "difficulty": "hard",
+    "label": "困难 3",
+    "puzzle": "1...34.8....8..5....4.6..21.18......3..1.2..6......81.52..7.9....6..9....9.64...2",
+    "givens": 28,
+    "stats": {
+      "guesses": 6,
+      "backtracks": 3,
+      "keySteps": 237
+    }
+  },
+  {
+    "id": "hard-4",
+    "difficulty": "hard",
+    "label": "困难 4",
+    "puzzle": "......8.16..2........7.5......6...2..1....3...8.......2......7..3..8....5...4....",
+    "givens": 17,
+    "stats": {
+      "guesses": 8,
+      "backtracks": 1,
+      "keySteps": 149
+    }
+  },
+  {
+    "id": "hard-5",
+    "difficulty": "hard",
+    "label": "困难 5",
+    "puzzle": ".834.........7..5...........4.1.8..........27...3.....2.6.5....5.....8........1..",
+    "givens": 17,
+    "stats": {
+      "guesses": 8,
+      "backtracks": 3,
+      "keySteps": 187
+    }
+  },
+  {
+    "id": "hard-6",
+    "difficulty": "hard",
+    "label": "困难 6",
+    "puzzle": "..........5724...98....947...9..3...5..9..12...3.1.9...6....25....56.....7......6",
+    "givens": 25,
+    "stats": {
+      "guesses": 9,
+      "backtracks": 5,
+      "keySteps": 241
+    }
+  },
+  {
+    "id": "hard-7",
+    "difficulty": "hard",
+    "label": "困难 7",
+    "puzzle": "....6...4..6.3....1..4..5.77.....8.5...8.....6.8....9...2.9....4....32....97..1..",
+    "givens": 23,
+    "stats": {
+      "guesses": 10,
+      "backtracks": 6,
+      "keySteps": 261
+    }
+  },
+  {
+    "id": "hard-8",
+    "difficulty": "hard",
+    "label": "困难 8",
+    "puzzle": "1.......3.6.3..7...7...5..121.7...9...7........8.1..2....8.64....9.2..6....4.....",
+    "givens": 23,
+    "stats": {
+      "guesses": 11,
+      "backtracks": 8,
+      "keySteps": 306
+    }
+  },
+  {
+    "id": "hard-9",
+    "difficulty": "hard",
+    "label": "困难 9",
+    "puzzle": "4.....5.8.3..........7......2.....6.....5.8......1.......6.3.7.5..2.....1.8......",
+    "givens": 17,
+    "stats": {
+      "guesses": 11,
+      "backtracks": 8,
+      "keySteps": 311
+    }
+  },
+  {
+    "id": "hard-10",
+    "difficulty": "hard",
+    "label": "困难 10",
+    "puzzle": "......4.18..2........6.7......8...6..4....3...1.......6......2..5..1....7...3....",
+    "givens": 17,
+    "stats": {
+      "guesses": 12,
+      "backtracks": 6,
+      "keySteps": 239
+    }
+  },
+  {
+    "id": "hard-11",
+    "difficulty": "hard",
+    "label": "困难 11",
+    "puzzle": "6..3.2....4.....8..........7.26............543.........8.15........8.2........7..",
+    "givens": 17,
+    "stats": {
+      "guesses": 12,
+      "backtracks": 7,
+      "keySteps": 264
+    }
+  },
+  {
+    "id": "hard-12",
+    "difficulty": "hard",
+    "label": "困难 12",
+    "puzzle": ".98.1....2......6.............3.2.5..84.........6.........4.8.93..5...........1..",
+    "givens": 17,
+    "stats": {
+      "guesses": 12,
+      "backtracks": 9,
+      "keySteps": 266
+    }
+  },
+  {
+    "id": "hard-13",
+    "difficulty": "hard",
+    "label": "困难 13",
+    "puzzle": "..84...3....3.....9....157479...8........7..514.....2...9.6...2.5....4......9..56",
+    "givens": 25,
+    "stats": {
+      "guesses": 12,
+      "backtracks": 7,
+      "keySteps": 339
+    }
+  },
+  {
+    "id": "hard-14",
+    "difficulty": "hard",
+    "label": "困难 14",
+    "puzzle": "12..4......5.69.1...9...5.........7.7...52.9..3......2.9.6...5.4..9..8.1..3...9.4",
+    "givens": 26,
+    "stats": {
+      "guesses": 12,
+      "backtracks": 10,
+      "keySteps": 345
+    }
+  },
+  {
+    "id": "hard-15",
+    "difficulty": "hard",
+    "label": "困难 15",
+    "puzzle": ".5..9....1.....6.....3.8.....8.4...9514.......3....2..........4.8...6..77..15..6.",
+    "givens": 22,
+    "stats": {
+      "guesses": 13,
+      "backtracks": 9,
+      "keySteps": 370
+    }
+  },
+  {
+    "id": "hard-16",
+    "difficulty": "hard",
+    "label": "困难 16",
+    "puzzle": ".47.2....8....1....3....9.2.....5...6..81..5.....4.....7....3.4...9...1.4..27.8..",
+    "givens": 23,
+    "stats": {
+      "guesses": 14,
+      "backtracks": 5,
+      "keySteps": 278
+    }
+  },
+  {
+    "id": "hard-17",
+    "difficulty": "hard",
+    "label": "困难 17",
+    "puzzle": ".2......6....41.....78....1......7....37.....6..412....1..74..5..8.5..7......39..",
+    "givens": 23,
+    "stats": {
+      "guesses": 14,
+      "backtracks": 9,
+      "keySteps": 309
+    }
+  },
+  {
+    "id": "hard-18",
+    "difficulty": "hard",
+    "label": "困难 18",
     "puzzle": "...658.....4......12............96.7...3..5....2.8...3..19..8..3.6.....4....473..",
     "givens": 23,
     "stats": {
@@ -84,9 +444,237 @@
     }
   },
   {
-    "id": "hard-2",
+    "id": "hard-19",
     "difficulty": "hard",
-    "label": "困难 2",
+    "label": "困难 19",
+    "puzzle": ".8...4.5....7..3............1..85...6.....2......4....3.26............417........",
+    "givens": 17,
+    "stats": {
+      "guesses": 16,
+      "backtracks": 10,
+      "keySteps": 384
+    }
+  },
+  {
+    "id": "hard-20",
+    "difficulty": "hard",
+    "label": "困难 20",
+    "puzzle": ".47.8...1............6..7..6....357......5....1..6....28..4.....9.1...4.....2.69.",
+    "givens": 22,
+    "stats": {
+      "guesses": 16,
+      "backtracks": 9,
+      "keySteps": 412
+    }
+  },
+  {
+    "id": "hard-21",
+    "difficulty": "hard",
+    "label": "困难 21",
+    "puzzle": ".......4...2..4..1.7..5..9...3..7....4..6....6..1..8...2....1..85.9...6.....8...3",
+    "givens": 22,
+    "stats": {
+      "guesses": 17,
+      "backtracks": 8,
+      "keySteps": 309
+    }
+  },
+  {
+    "id": "hard-22",
+    "difficulty": "hard",
+    "label": "困难 22",
+    "puzzle": "..247..58..............1.4.....2...9528.9.4....9...1.........3.3....75..685..2...",
+    "givens": 24,
+    "stats": {
+      "guesses": 18,
+      "backtracks": 14,
+      "keySteps": 397
+    }
+  },
+  {
+    "id": "hard-23",
+    "difficulty": "hard",
+    "label": "困难 23",
+    "puzzle": "52...6.........7.13...........4..8..6......5...........418.........3..2...87.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 11,
+      "keySteps": 253
+    }
+  },
+  {
+    "id": "hard-24",
+    "difficulty": "hard",
+    "label": "困难 24",
+    "puzzle": ".8..4....3......1........2...5...4.69..1..8..2...........3.9....6....5.....2.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 14,
+      "keySteps": 331
+    }
+  },
+  {
+    "id": "hard-25",
+    "difficulty": "hard",
+    "label": "困难 25",
+    "puzzle": "3.6.7...........518.........1.4.5...7.....6.....2......2.....4.....8.3.....5.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 12,
+      "keySteps": 349
+    }
+  },
+  {
+    "id": "hard-26",
+    "difficulty": "hard",
+    "label": "困难 26",
+    "puzzle": "6.....8.3.4.7.................5.4.7.3..2.....1.6.......2.....5.....8.6......1....",
+    "givens": 17,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 13,
+      "keySteps": 355
+    }
+  },
+  {
+    "id": "hard-27",
+    "difficulty": "hard",
+    "label": "困难 27",
+    "puzzle": "1.....3.8.6.4..............2.3.1...........758.........7.5...6.....8.2...4.......",
+    "givens": 17,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 13,
+      "keySteps": 383
+    }
+  },
+  {
+    "id": "hard-28",
+    "difficulty": "hard",
+    "label": "困难 28",
+    "puzzle": ".52..68.......7.2.......6....48..9..2..41......1.....8..61..38.....9...63..6..1.9",
+    "givens": 25,
+    "stats": {
+      "guesses": 19,
+      "backtracks": 12,
+      "keySteps": 397
+    }
+  },
+  {
+    "id": "hard-29",
+    "difficulty": "hard",
+    "label": "困难 29",
+    "puzzle": ".26.39......6....19.....7.......4..9.5....2....85.....3..2..9..4....762.........4",
+    "givens": 22,
+    "stats": {
+      "guesses": 21,
+      "backtracks": 16,
+      "keySteps": 461
+    }
+  },
+  {
+    "id": "hard-30",
+    "difficulty": "hard",
+    "label": "困难 30",
+    "puzzle": "...5...........5.697.....2...48.2...25.1...3..8..3.........4.7..13.5..9..2...31..",
+    "givens": 24,
+    "stats": {
+      "guesses": 21,
+      "backtracks": 16,
+      "keySteps": 475
+    }
+  },
+  {
+    "id": "hard-31",
+    "difficulty": "hard",
+    "label": "困难 31",
+    "puzzle": "......8.16..2........7.5......6...2..1....3...8.......2......7..4..8....5...3....",
+    "givens": 17,
+    "stats": {
+      "guesses": 23,
+      "backtracks": 16,
+      "keySteps": 376
+    }
+  },
+  {
+    "id": "hard-32",
+    "difficulty": "hard",
+    "label": "困难 32",
+    "puzzle": ".4.5.....8...9..3..76.2.....146..........9..7.....36....1..4.5..6......3..71..2..",
+    "givens": 23,
+    "stats": {
+      "guesses": 23,
+      "backtracks": 16,
+      "keySteps": 546
+    }
+  },
+  {
+    "id": "hard-33",
+    "difficulty": "hard",
+    "label": "困难 33",
+    "puzzle": "....7..2.8.......6.1.2.5...9.54....8.........3....85.1...3.2.8.4.......9.7..6....",
+    "givens": 22,
+    "stats": {
+      "guesses": 24,
+      "backtracks": 17,
+      "keySteps": 520
+    }
+  },
+  {
+    "id": "hard-34",
+    "difficulty": "hard",
+    "label": "困难 34",
+    "puzzle": ".2.3.......6..8.9.83.5........2...8.7.9..5........6..4.......1...1...4.22..7..8.9",
+    "givens": 23,
+    "stats": {
+      "guesses": 24,
+      "backtracks": 20,
+      "keySteps": 599
+    }
+  },
+  {
+    "id": "hard-35",
+    "difficulty": "hard",
+    "label": "困难 35",
+    "puzzle": ".2.......3.5.62..9.68...3...5..........64.8.2..47..9....3.....1.....6...17.43....",
+    "givens": 24,
+    "stats": {
+      "guesses": 25,
+      "backtracks": 18,
+      "keySteps": 531
+    }
+  },
+  {
+    "id": "hard-36",
+    "difficulty": "hard",
+    "label": "困难 36",
+    "puzzle": "1....6.8..64..........4...7....9.6...7.4..5..5...7.1...5....32.3....8...4........",
+    "givens": 21,
+    "stats": {
+      "guesses": 29,
+      "backtracks": 24,
+      "keySteps": 525
+    }
+  },
+  {
+    "id": "hard-37",
+    "difficulty": "hard",
+    "label": "困难 37",
+    "puzzle": "..........72.6.1....51...82.8...13..4.........37.9..1.....238..5.4..9.........79.",
+    "givens": 24,
+    "stats": {
+      "guesses": 29,
+      "backtracks": 23,
+      "keySteps": 666
+    }
+  },
+  {
+    "id": "hard-38",
+    "difficulty": "hard",
+    "label": "困难 38",
     "puzzle": "...8....9.873...4.6..7.......85..97...........43..75.......3....3...145.4....2..1",
     "givens": 24,
     "stats": {
@@ -99,6 +687,330 @@
     "id": "expert-1",
     "difficulty": "expert",
     "label": "专家 1",
+    "puzzle": "...57..3.1......2.7...234......8...4..7..4...49....6.5.42...3.....7..9....18.....",
+    "givens": 24,
+    "stats": {
+      "guesses": 31,
+      "backtracks": 26,
+      "keySteps": 635
+    }
+  },
+  {
+    "id": "expert-2",
+    "difficulty": "expert",
+    "label": "专家 2",
+    "puzzle": "......8.17..2........5.6......7...5..1....3...8.......5......2..3..8....6...4....",
+    "givens": 17,
+    "stats": {
+      "guesses": 32,
+      "backtracks": 26,
+      "keySteps": 466
+    }
+  },
+  {
+    "id": "expert-3",
+    "difficulty": "expert",
+    "label": "专家 3",
+    "puzzle": "2.3.8....8..7...........1...6.5.7...4......3....1............82.5....6...1.......",
+    "givens": 17,
+    "stats": {
+      "guesses": 32,
+      "backtracks": 22,
+      "keySteps": 580
+    }
+  },
+  {
+    "id": "expert-4",
+    "difficulty": "expert",
+    "label": "专家 4",
+    "puzzle": "..9.....3.....9...7.....5.6..65..4.....3......28......3..75.6..6...........12.3.8",
+    "givens": 21,
+    "stats": {
+      "guesses": 32,
+      "backtracks": 27,
+      "keySteps": 613
+    }
+  },
+  {
+    "id": "expert-5",
+    "difficulty": "expert",
+    "label": "专家 5",
+    "puzzle": "6.....7.3.4.8.................5.4.8.7..2.....1.3.......2.....5.....7.9......1....",
+    "givens": 17,
+    "stats": {
+      "guesses": 34,
+      "backtracks": 28,
+      "keySteps": 534
+    }
+  },
+  {
+    "id": "expert-6",
+    "difficulty": "expert",
+    "label": "专家 6",
+    "puzzle": ".....7.95.....1...86..2.....2..73..85......6...3..49..3.5...41724................",
+    "givens": 23,
+    "stats": {
+      "guesses": 34,
+      "backtracks": 28,
+      "keySteps": 759
+    }
+  },
+  {
+    "id": "expert-7",
+    "difficulty": "expert",
+    "label": "专家 7",
+    "puzzle": "53..2.9...24.3..5...9..........1.827...7.........981.............64....91.2.5.43.",
+    "givens": 25,
+    "stats": {
+      "guesses": 36,
+      "backtracks": 27,
+      "keySteps": 696
+    }
+  },
+  {
+    "id": "expert-8",
+    "difficulty": "expert",
+    "label": "专家 8",
+    "puzzle": ".32.....58..3.....9.428...1...4...39...6...5.....1.....2...67.8.....4....95....6.",
+    "givens": 24,
+    "stats": {
+      "guesses": 36,
+      "backtracks": 32,
+      "keySteps": 754
+    }
+  },
+  {
+    "id": "expert-9",
+    "difficulty": "expert",
+    "label": "专家 9",
+    "puzzle": ".5.3.7.4.1.........3.......5.8.3.61....8..5.9.6..1........4...6...6927....2...9..",
+    "givens": 24,
+    "stats": {
+      "guesses": 36,
+      "backtracks": 30,
+      "keySteps": 796
+    }
+  },
+  {
+    "id": "expert-10",
+    "difficulty": "expert",
+    "label": "专家 10",
+    "puzzle": "48.3............71.2.......7.5....6....2..8.............1.76...3.....4......5....",
+    "givens": 17,
+    "stats": {
+      "guesses": 37,
+      "backtracks": 29,
+      "keySteps": 498
+    }
+  },
+  {
+    "id": "expert-11",
+    "difficulty": "expert",
+    "label": "专家 11",
+    "puzzle": "......8.17..2........5.6......7...5..1....3...8.......5......2..4..8....6...3....",
+    "givens": 17,
+    "stats": {
+      "guesses": 37,
+      "backtracks": 31,
+      "keySteps": 617
+    }
+  },
+  {
+    "id": "expert-12",
+    "difficulty": "expert",
+    "label": "专家 12",
+    "puzzle": ".923.........8.1...........1.7.4...........658.........6.5.2...4.....7.....9.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 37,
+      "backtracks": 32,
+      "keySteps": 618
+    }
+  },
+  {
+    "id": "expert-13",
+    "difficulty": "expert",
+    "label": "专家 13",
+    "puzzle": "6..3.2....5.....1..........7.26............543.........8.15........4.2........7..",
+    "givens": 17,
+    "stats": {
+      "guesses": 40,
+      "backtracks": 36,
+      "keySteps": 597
+    }
+  },
+  {
+    "id": "expert-14",
+    "difficulty": "expert",
+    "label": "专家 14",
+    "puzzle": "1.....9...64..1.7..7..4.......3.....3.89..5....7....2.....6.7.9.....4.1....129.3.",
+    "givens": 24,
+    "stats": {
+      "guesses": 40,
+      "backtracks": 37,
+      "keySteps": 701
+    }
+  },
+  {
+    "id": "expert-15",
+    "difficulty": "expert",
+    "label": "专家 15",
+    "puzzle": "1.....3.8.6.4..............2.3.1...........958.........5.6...7.....8.2...4.......",
+    "givens": 17,
+    "stats": {
+      "guesses": 41,
+      "backtracks": 35,
+      "keySteps": 867
+    }
+  },
+  {
+    "id": "expert-16",
+    "difficulty": "expert",
+    "label": "专家 16",
+    "puzzle": "..53.....8......2..7..1.5..4....53...1..7...6..32...8..6.5....9..4....3......97..",
+    "givens": 23,
+    "stats": {
+      "guesses": 41,
+      "backtracks": 35,
+      "keySteps": 959
+    }
+  },
+  {
+    "id": "expert-17",
+    "difficulty": "expert",
+    "label": "专家 17",
+    "puzzle": "..5..8..18......9.......78....4.....64....9......53..2.6.........138..5....9.714.",
+    "givens": 23,
+    "stats": {
+      "guesses": 42,
+      "backtracks": 34,
+      "keySteps": 610
+    }
+  },
+  {
+    "id": "expert-18",
+    "difficulty": "expert",
+    "label": "专家 18",
+    "puzzle": "4.....3.....8.2......7........1...8734.......6........5...6........1.4...82......",
+    "givens": 17,
+    "stats": {
+      "guesses": 44,
+      "backtracks": 37,
+      "keySteps": 471
+    }
+  },
+  {
+    "id": "expert-19",
+    "difficulty": "expert",
+    "label": "专家 19",
+    "puzzle": "4.....8.5.3..........7......2.....6.....5.4......1.......6.3.7.5..2.....1.9......",
+    "givens": 17,
+    "stats": {
+      "guesses": 44,
+      "backtracks": 39,
+      "keySteps": 656
+    }
+  },
+  {
+    "id": "expert-20",
+    "difficulty": "expert",
+    "label": "专家 20",
+    "puzzle": "...36....85.......9.4..8........68.........17..9..45...1.5...6.4....9..2.....3...",
+    "givens": 21,
+    "stats": {
+      "guesses": 44,
+      "backtracks": 40,
+      "keySteps": 1210
+    }
+  },
+  {
+    "id": "expert-21",
+    "difficulty": "expert",
+    "label": "专家 21",
+    "puzzle": "38.6.......9.......2..3.51......5....3..1..6....4......17.5..8.......9.......7.32",
+    "givens": 21,
+    "stats": {
+      "guesses": 46,
+      "backtracks": 42,
+      "keySteps": 860
+    }
+  },
+  {
+    "id": "expert-22",
+    "difficulty": "expert",
+    "label": "专家 22",
+    "puzzle": "2....1.9..1..3.7..9..8...2.......85..6.4.........7...3.2.3...6....5.....1.9...2.5",
+    "givens": 23,
+    "stats": {
+      "guesses": 47,
+      "backtracks": 42,
+      "keySteps": 824
+    }
+  },
+  {
+    "id": "expert-23",
+    "difficulty": "expert",
+    "label": "专家 23",
+    "puzzle": "......94.....9...53....5.7..8.4..1..463...........7.8.8..7.....7......28.5.26....",
+    "givens": 23,
+    "stats": {
+      "guesses": 47,
+      "backtracks": 42,
+      "keySteps": 992
+    }
+  },
+  {
+    "id": "expert-24",
+    "difficulty": "expert",
+    "label": "专家 24",
+    "puzzle": ".2....5938..5..46.94..6...8..2.3.....6..8.73.7..2.........4.38..7....6..........5",
+    "givens": 26,
+    "stats": {
+      "guesses": 50,
+      "backtracks": 46,
+      "keySteps": 915
+    }
+  },
+  {
+    "id": "expert-25",
+    "difficulty": "expert",
+    "label": "专家 25",
+    "puzzle": "3...8.......7....51..............36...2..4....7...........6.13..452...........8..",
+    "givens": 17,
+    "stats": {
+      "guesses": 52,
+      "backtracks": 45,
+      "keySteps": 720
+    }
+  },
+  {
+    "id": "expert-26",
+    "difficulty": "expert",
+    "label": "专家 26",
+    "puzzle": "....7..8...6...5...2...3.61.1...7..2..8..534.2..9.......2......58...6.3.4...1....",
+    "givens": 24,
+    "stats": {
+      "guesses": 56,
+      "backtracks": 52,
+      "keySteps": 1168
+    }
+  },
+  {
+    "id": "expert-27",
+    "difficulty": "expert",
+    "label": "专家 27",
+    "puzzle": "..7..8.....6.2.3...3......9.1..5..6.....1.....7.9....2........4.83..4...26....51.",
+    "givens": 22,
+    "stats": {
+      "guesses": 59,
+      "backtracks": 54,
+      "keySteps": 1388
+    }
+  },
+  {
+    "id": "expert-28",
+    "difficulty": "expert",
+    "label": "专家 28",
     "puzzle": ".........9......84.623...5....6...453...1...6...9...7....1.....4.5..2....3.8....9",
     "givens": 22,
     "stats": {
@@ -108,9 +1020,321 @@
     }
   },
   {
-    "id": "expert-2",
+    "id": "expert-29",
     "difficulty": "expert",
-    "label": "专家 2",
+    "label": "专家 29",
+    "puzzle": "6..3.2....4.....1..........7.26............543.........8.15........4.2........7..",
+    "givens": 17,
+    "stats": {
+      "guesses": 70,
+      "backtracks": 65,
+      "keySteps": 949
+    }
+  },
+  {
+    "id": "expert-30",
+    "difficulty": "expert",
+    "label": "专家 30",
+    "puzzle": ".237....68...6.59.9.....7......4.97.3.7.96..2.........5..47.........2....8.......",
+    "givens": 23,
+    "stats": {
+      "guesses": 75,
+      "backtracks": 69,
+      "keySteps": 1336
+    }
+  },
+  {
+    "id": "expert-31",
+    "difficulty": "expert",
+    "label": "专家 31",
+    "puzzle": "9.4..5...25.6..1..31......8.7...9...4..26......147....7.......2...3..8.6.4.....9.",
+    "givens": 25,
+    "stats": {
+      "guesses": 75,
+      "backtracks": 69,
+      "keySteps": 1512
+    }
+  },
+  {
+    "id": "expert-32",
+    "difficulty": "expert",
+    "label": "专家 32",
+    "puzzle": "....5...11......7..6.....8......4.....9.1.3.....596.2..8..62..7..7......3.5.7.2..",
+    "givens": 23,
+    "stats": {
+      "guesses": 75,
+      "backtracks": 68,
+      "keySteps": 1712
+    }
+  },
+  {
+    "id": "expert-33",
+    "difficulty": "expert",
+    "label": "专家 33",
+    "puzzle": "....1.78.5....9..........4..2..........6....3.74.8.........3..2.8..4..1.6..5.....",
+    "givens": 19,
+    "stats": {
+      "guesses": 77,
+      "backtracks": 70,
+      "keySteps": 1367
+    }
+  },
+  {
+    "id": "expert-34",
+    "difficulty": "expert",
+    "label": "专家 34",
+    "puzzle": "4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......",
+    "givens": 17,
+    "stats": {
+      "guesses": 81,
+      "backtracks": 75,
+      "keySteps": 1129
+    }
+  },
+  {
+    "id": "expert-35",
+    "difficulty": "expert",
+    "label": "专家 35",
+    "puzzle": "....75....1..2.....4...3...5.....3.2...8...1.......6.....1..48.2........7........",
+    "givens": 17,
+    "stats": {
+      "guesses": 90,
+      "backtracks": 83,
+      "keySteps": 1595
+    }
+  },
+  {
+    "id": "expert-36",
+    "difficulty": "expert",
+    "label": "专家 36",
+    "puzzle": ".2.3......63.....58.......15....9.3....7........1....8.879..26......6.7...6..7..4",
+    "givens": 23,
+    "stats": {
+      "guesses": 98,
+      "backtracks": 91,
+      "keySteps": 1503
+    }
+  },
+  {
+    "id": "expert-37",
+    "difficulty": "expert",
+    "label": "专家 37",
+    "puzzle": ".6.5.1.9.1...9..539....7....4.8...7.......5.8.817.5.3.....5.2............76..8...",
+    "givens": 25,
+    "stats": {
+      "guesses": 105,
+      "backtracks": 93,
+      "keySteps": 1791
+    }
+  },
+  {
+    "id": "expert-38",
+    "difficulty": "expert",
+    "label": "专家 38",
+    "puzzle": "1.....3.8.7.4..............2.3.1...........958.........5.6...7.....8.2...4.......",
+    "givens": 17,
+    "stats": {
+      "guesses": 112,
+      "backtracks": 103,
+      "keySteps": 2059
+    }
+  },
+  {
+    "id": "expert-39",
+    "difficulty": "expert",
+    "label": "专家 39",
+    "puzzle": "..5...987.4..5...1..7......2...48....9.1.....6..2.....3..6..2.......9.7.......5..",
+    "givens": 21,
+    "stats": {
+      "guesses": 113,
+      "backtracks": 107,
+      "keySteps": 1893
+    }
+  },
+  {
+    "id": "expert-40",
+    "difficulty": "expert",
+    "label": "专家 40",
+    "puzzle": "....14....3....2...7..........9...3.6.1.............8.2.....1.4....5.6.....7.8...",
+    "givens": 17,
+    "stats": {
+      "guesses": 113,
+      "backtracks": 106,
+      "keySteps": 2099
+    }
+  },
+  {
+    "id": "expert-41",
+    "difficulty": "expert",
+    "label": "专家 41",
+    "puzzle": "45.....3....8.1....9...........5..9.2..7.....8.........1..4..........7.2...6..8..",
+    "givens": 17,
+    "stats": {
+      "guesses": 123,
+      "backtracks": 121,
+      "keySteps": 1211
+    }
+  },
+  {
+    "id": "expert-42",
+    "difficulty": "expert",
+    "label": "专家 42",
+    "puzzle": "1....786...7..8.1.8..2....9........24...1......9..5...6.8..........5.9.......93.4",
+    "givens": 22,
+    "stats": {
+      "guesses": 124,
+      "backtracks": 116,
+      "keySteps": 2199
+    }
+  },
+  {
+    "id": "expert-43",
+    "difficulty": "expert",
+    "label": "专家 43",
+    "puzzle": "34.6.......7.......2..8.57......5....7..1..2....4......36.2..1.......9.......7.82",
+    "givens": 21,
+    "stats": {
+      "guesses": 125,
+      "backtracks": 118,
+      "keySteps": 2266
+    }
+  },
+  {
+    "id": "expert-44",
+    "difficulty": "expert",
+    "label": "专家 44",
+    "puzzle": ".2..........6....3.74.8.........3..2.8..4..1.6..5.........1.78.5....9..........4.",
+    "givens": 19,
+    "stats": {
+      "guesses": 132,
+      "backtracks": 126,
+      "keySteps": 2591
+    }
+  },
+  {
+    "id": "expert-45",
+    "difficulty": "expert",
+    "label": "专家 45",
+    "puzzle": "1....7.9..3..2...8..96..5....53..9...1..8...26....4...3......1..4......7..7...3..",
+    "givens": 23,
+    "stats": {
+      "guesses": 135,
+      "backtracks": 127,
+      "keySteps": 2559
+    }
+  },
+  {
+    "id": "expert-46",
+    "difficulty": "expert",
+    "label": "专家 46",
+    "puzzle": "6.2.5.........4.3..........43...8....1....2........7..5..27...........81...6.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 137,
+      "backtracks": 130,
+      "keySteps": 2416
+    }
+  },
+  {
+    "id": "expert-47",
+    "difficulty": "expert",
+    "label": "专家 47",
+    "puzzle": "4...7.1....19.46.5.....1......7....2..2.3....847..6....14...8.6.2....3..6...9....",
+    "givens": 25,
+    "stats": {
+      "guesses": 140,
+      "backtracks": 134,
+      "keySteps": 2699
+    }
+  },
+  {
+    "id": "expert-48",
+    "difficulty": "expert",
+    "label": "专家 48",
+    "puzzle": "...52.....9...3..4......7...1.....4..8..453..6...1...87.2........8....32.4..8..1.",
+    "givens": 23,
+    "stats": {
+      "guesses": 181,
+      "backtracks": 168,
+      "keySteps": 2672
+    }
+  },
+  {
+    "id": "expert-49",
+    "difficulty": "expert",
+    "label": "专家 49",
+    "puzzle": ".524.........7.1..............8.2...3.....6...9.5.....1.6.3...........897........",
+    "givens": 17,
+    "stats": {
+      "guesses": 195,
+      "backtracks": 190,
+      "keySteps": 2886
+    }
+  },
+  {
+    "id": "expert-50",
+    "difficulty": "expert",
+    "label": "专家 50",
+    "puzzle": "...5.1....9....8...6.......4.1..........7..9........3.8.....1.5...2..4.....36....",
+    "givens": 17,
+    "stats": {
+      "guesses": 201,
+      "backtracks": 194,
+      "keySteps": 3298
+    }
+  },
+  {
+    "id": "expert-51",
+    "difficulty": "expert",
+    "label": "专家 51",
+    "puzzle": ".......71.2.8........4.3...7...6..5....2..3..9........6...7.....8....4......5....",
+    "givens": 17,
+    "stats": {
+      "guesses": 213,
+      "backtracks": 207,
+      "keySteps": 3592
+    }
+  },
+  {
+    "id": "expert-52",
+    "difficulty": "expert",
+    "label": "专家 52",
+    "puzzle": ".4..5..67...1...4....2.....1..8..3........2...6...........4..5.3.....8..2........",
+    "givens": 17,
+    "stats": {
+      "guesses": 239,
+      "backtracks": 228,
+      "keySteps": 3382
+    }
+  },
+  {
+    "id": "expert-53",
+    "difficulty": "expert",
+    "label": "专家 53",
+    "puzzle": "6.2.5.........3.4..........43...8....1....2........7..5..27...........81...6.....",
+    "givens": 17,
+    "stats": {
+      "guesses": 247,
+      "backtracks": 240,
+      "keySteps": 4326
+    }
+  },
+  {
+    "id": "expert-54",
+    "difficulty": "expert",
+    "label": "专家 54",
+    "puzzle": "...5.3.......6.7..5.8....1636..2.......4.1.......3...567....2.8..4.7.......2..5..",
+    "givens": 23,
+    "stats": {
+      "guesses": 250,
+      "backtracks": 238,
+      "keySteps": 4577
+    }
+  },
+  {
+    "id": "expert-55",
+    "difficulty": "expert",
+    "label": "专家 55",
     "puzzle": "1.....7.9.4...72..8.........7..1..6.3.......5.6..4..2.........8..53...7.7.2....46",
     "givens": 23,
     "stats": {

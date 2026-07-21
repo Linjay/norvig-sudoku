@@ -78,8 +78,13 @@ function entry(id, difficulty, label, puzzle) {
   };
 }
 
+const DIFF_CN = { easy: '简单', medium: '中等', hard: '困难', expert: '专家' };
+
 function main() {
-  const buckets = { medium: [], hard: [], expert: [] };
+  // The full library: every solvable candidate from data/, bucketed by the
+  // solver's guess count, plus carved 0-guess easy grids. Sorted easy→hard,
+  // and by guess count (then deduction length) within each difficulty.
+  const buckets = { easy: [], medium: [], hard: [], expert: [] };
   const sources = [
     ...readPuzzles('top95.txt').map((p, i) => ({ p, src: `top95#${i + 1}` })),
     ...readPuzzles('hardest.txt').map((p, i) => ({ p, src: `hardest#${i + 1}` })),
@@ -93,46 +98,44 @@ function main() {
       console.log(`  skip ${src}: timeout/error`);
       continue;
     }
-    if (!t.solved || t.stats.timeUs > 200000) continue;
+    if (!t.solved || t.stats.timeUs > 200000) {
+      console.log(`  skip ${src}: ${t.solved ? 'too slow' : 'unsolved'}`);
+      continue;
+    }
     const g = t.stats.guesses;
-    const rec = { p, src, guesses: g, timeUs: t.stats.timeUs };
-    if (g >= 1 && g <= 5) buckets.medium.push(rec);
-    else if (g >= 6 && g <= 30) buckets.hard.push(rec);
-    else if (g > 30) buckets.expert.push(rec);
-  }
-  for (const b of Object.keys(buckets)) {
-    console.log(`${b}: ${buckets[b].length} candidates`);
+    const rec = { p, src, guesses: g, keySteps: t.stats.keySteps };
+    if (g === 0) buckets.easy.push(rec);
+    else if (g <= 5) buckets.medium.push(rec);
+    else if (g <= 30) buckets.hard.push(rec);
+    else buckets.expert.push(rec);
   }
 
-  // Easy puzzles: carve from the solutions of the first medium candidates so
-  // the three easy grids are unrelated to each other.
-  const easyBases = buckets.medium.slice(0, 3).map(r => trace(r.p).solution);
-  const easy = easyBases.map((sol, i) => carveEasy(sol, 42 + i, 36));
+  // Easy puzzles: any 0-guess candidates from the data sets, plus 0-guess
+  // grids carved from six unrelated solutions.
+  const easyBases = buckets.medium.slice(0, 6).map(r => trace(r.p).solution);
+  const easy = [
+    ...buckets.easy,
+    ...easyBases.map((sol, i) => carveEasy(sol, 42 + i, 36)).map(p => {
+      const t = trace(p);
+      return { p, guesses: 0, keySteps: t.stats.keySteps };
+    }),
+  ].sort((a, b) => a.keySteps - b.keySteps); // shorter deduction first
 
-  // Prefer expert picks from the hardest.txt set when available.
-  const expertPool = [
-    ...buckets.expert.filter(r => r.src.startsWith('hardest')),
-    ...buckets.expert.filter(r => !r.src.startsWith('hardest')),
-  ];
-  // Spread hard/expert picks by guess count: take the median and the max so
-  // the two puzzles in each bucket feel distinct.
-  const byGuesses = arr => [...arr].sort((a, b) => a.guesses - b.guesses);
-  const pick2 = arr => {
-    const s = byGuesses(arr);
-    return [s[Math.floor(s.length / 2)], s[s.length - 1]];
-  };
+  const byAscending = arr =>
+    [...arr].sort((a, b) => a.guesses - b.guesses || a.keySteps - b.keySteps);
 
   const lib = [];
-  easy.forEach((p, i) =>
-    lib.push(entry(`easy-${i + 1}`, 'easy', `简单 ${i + 1}`, p)));
-  buckets.medium.slice(0, 3).forEach((r, i) =>
-    lib.push(entry(`medium-${i + 1}`, 'medium', `中等 ${i + 1}`, r.p)));
-  pick2(buckets.hard).forEach((r, i) =>
-    lib.push(entry(`hard-${i + 1}`, 'hard', `困难 ${i + 1}`, r.p)));
-  pick2(expertPool).forEach((r, i) =>
-    lib.push(entry(`expert-${i + 1}`, 'expert', `专家 ${i + 1}`, r.p)));
+  const push = (difficulty, recs) => recs.forEach((r, i) =>
+    lib.push(entry(`${difficulty}-${i + 1}`, difficulty,
+      `${DIFF_CN[difficulty]} ${i + 1}`, r.p)));
+  push('easy', easy);
+  push('medium', byAscending(buckets.medium));
+  push('hard', byAscending(buckets.hard));
+  push('expert', byAscending(buckets.expert));
 
-  if (lib.length !== 10) throw new Error(`expected 10 puzzles, got ${lib.length}`);
+  console.log(`library: easy=${easy.length} medium=${buckets.medium.length} ` +
+    `hard=${buckets.hard.length} expert=${buckets.expert.length} ` +
+    `total=${lib.length}`);
   const outPath = path.join(ROOT, 'web', 'puzzles.json');
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(lib, null, 2) + '\n');
