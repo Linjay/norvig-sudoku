@@ -140,8 +140,13 @@
         `<span class="tag">[${STEP_TAGS[s.t] || s.t}]</span>#${si + 1} ${describeStep(s)}</div>`;
     }
     els.log.innerHTML = html;
+    // Scroll only the log container itself — scrollIntoView would also
+    // scroll every ancestor and yank the whole page along on each step.
     const curEl = els.log.querySelector('.current');
-    if (curEl) curEl.scrollIntoView({ block: 'center' });
+    if (curEl) {
+      els.log.scrollTop =
+        curEl.offsetTop - els.log.clientHeight / 2 + curEl.offsetHeight / 2;
+    }
   }
 
   els.log.addEventListener('click', (e) => {

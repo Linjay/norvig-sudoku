@@ -87,6 +87,25 @@ test('5. unsolvable custom puzzle shows an error and stays usable', async ({ pag
   await expect(page.locator('#board .cell.st-given')).not.toHaveCount(0);
 });
 
+test('7. playback must not scroll the page (log auto-scroll stays local)', async ({ page }) => {
+  // Small viewport so the page overflows and window scrolling is possible.
+  await page.setViewportSize({ width: 1280, height: 500 });
+  await page.goto('/');
+  await page.click('.puzzle-item[data-id="medium-1"]');
+  await page.click('#btn-solve');
+  await expect(page.locator('#playback')).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, 0));
+  // JS clicks: a Playwright click would itself scroll the button into view.
+  await page.evaluate(() => document.getElementById('btn-play').click());
+  await page.waitForFunction(() =>
+    Number(document.getElementById('progress').value) > 30);
+  await page.evaluate(() => document.getElementById('btn-play').click()); // pause
+  expect(await page.evaluate(() => window.scrollY)).toBe(0);
+  // the log itself did auto-scroll
+  expect(await page.evaluate(() =>
+    document.getElementById('log').scrollTop)).toBeGreaterThan(0);
+});
+
 test('6. invalid custom input is rejected client-side without a request', async ({ page }) => {
   await page.goto('/');
   const solveCalls = [];
