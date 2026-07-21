@@ -33,6 +33,23 @@ for (const p of library) {
   });
 }
 
+test('givens are displayed from step 0 and never disappear', () => {
+  const p = library.find((x) => x.difficulty === 'hard');
+  const t = trace(p.puzzle);
+  const e = new ReplayEngine(t);
+  const givenCells = [];
+  for (let k = 0; k < 81; k++) {
+    if (p.puzzle[k] !== '.') givenCells.push(k);
+  }
+  for (let n = 0; n <= t.steps.length; n += 211) {
+    e.seek(n);
+    for (const k of givenCells) {
+      assert.equal(e.det[k], STYLE.GIVEN, `step ${n}: given cell ${k} lost`);
+      assert.equal(String(e.value[k]), p.puzzle[k], `step ${n}: cell ${k} digit`);
+    }
+  }
+});
+
 test('seek(n) equals stepping forward n times (incl. across backtracks)', () => {
   const p = library.find((x) => x.difficulty === 'hard');
   const t = trace(p.puzzle);

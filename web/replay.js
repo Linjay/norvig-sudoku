@@ -46,6 +46,16 @@ class ReplayEngine {
     this.det = new Uint8Array(81);   // STYLE.* per cell
     this.value = new Uint8Array(81); // displayed digit for determined cells
     this.snaps = {};                 // depth -> pre-guess snapshot
+    // Givens are displayed from step 0 on — the puzzle's own digits must
+    // never vanish from the board. Their trace steps then become visual
+    // no-ops and playback only animates the deduction.
+    const puzzle = this.trace.puzzle || '';
+    for (let k = 0; k < puzzle.length && k < 81; k++) {
+      if (puzzle[k] >= '1' && puzzle[k] <= '9') {
+        this.det[k] = STYLE.GIVEN;
+        this.value[k] = puzzle[k].charCodeAt(0) - 48;
+      }
+    }
   }
 
   _apply(s) {

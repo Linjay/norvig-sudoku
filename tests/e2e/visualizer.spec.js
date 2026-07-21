@@ -46,6 +46,9 @@ test('3. solve + playback reaches the exact solution', async ({ page, request })
   await expect(page.locator('#playback')).toBeVisible();
   await expect(page.locator('#stats')).toBeVisible();
 
+  // At step 0 the givens must still be on the board.
+  expect(await boardString(page)).toBe(medium.puzzle);
+
   // Let the animation actually run a few steps, then jump to the end.
   await page.click('#btn-play');
   await page.waitForFunction(() =>
